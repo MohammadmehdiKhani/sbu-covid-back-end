@@ -1,6 +1,10 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
 
+/*
+mongoose schema and Joi scehma for Country document
+*/
+
 const countrySchema = new mongoose.Schema({
     name: {
         type: String,

@@ -6,6 +6,12 @@ const { User, validateUser } = require("../database/schema/userSchema");
 const debug = require("debug")("app:debug");
 const authenticate = require("../middleware/authMid");
 
+/*
+this file contains controllers that handle request to /admin path
+authenticate middleware is used to only authenticate user can access to this contorlles
+and for authorization, role of user in the access token is used
+*/
+
 router.get("/", authenticate, (req, res) => {
     return res.status(200).send();
 });

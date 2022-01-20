@@ -12,6 +12,13 @@ router.get("/", (req, res) => {
     return res.status(200).send();
 });
 
+/*
+this controller handle POST /auth
+if user with specified username and password exist in db
+a token with username and role of that user is created and
+retured to client in x-auth-token header
+*/
+
 router.post("/", async (req, res, next) => {
     debug(`===> POST /auth`);
     debug(`request body is`);

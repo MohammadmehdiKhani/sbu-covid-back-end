@@ -9,6 +9,12 @@ const debug = require("debug")("app:debug");
 const authenticate = require("../middleware/authMid");
 const mongoose = require("mongoose");
 
+/*
+this file contains controllers that handle request to /countries path
+authenticate middleware is used to only authenticate user can access to this contorlles
+and for authorization, role of user in the access token is used
+*/
+
 router.get("/", async (req, res) => {
     let sort = req.query.sort;
     let sortFilter = { "todayCases": 1 };

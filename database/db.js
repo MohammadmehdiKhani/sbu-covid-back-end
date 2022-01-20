@@ -13,6 +13,13 @@ function connectToDb() {
         .catch(() => console.log("failed to connect to db"));
 }
 
+/*
+this function check if any user with role superUser exist in db
+if there is not such a user, default user inserted to db
+username and password readed from *.json (config) or custom-environment-variable
+according to value of $node_env
+*/
+
 async function initDb() {
     let superUsers = await User.find({ role: "superUser" });
     if (superUsers.length)
